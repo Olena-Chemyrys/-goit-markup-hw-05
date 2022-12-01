@@ -32,7 +32,9 @@
           <ul class="header-links list">
             <!--тут мають бути ссилки-->
             <li class="header-item">
-              <a href="./index.html" class="header-link link">Студія</a>
+              <div class="header-thumb">
+                <a href="./index.html" class="header-link link">Студія</a>
+              </div>
             </li>
             <li class="header-item">
               <a href="./portfolio.html" class="header-link link">Портфоліо</a>
@@ -70,7 +72,9 @@
       <section class="hero section">
         <div class="container">
           <h1 class="main-title">Ефективні рішення для вашого бізнесу</h1>
-          <button type="button" class="button primary">Замовити послугу</button>
+          <button type="button" class="button primary" data-modal-open>
+            Замовити послугу
+          </button>
         </div>
       </section>
       <!--Особливості-->
@@ -526,5 +530,19 @@
         </div>
       </div>
     </footer>
+
+    <div class="backdrope is-hidden" data-modal>
+      <div class="modal">
+        <button type="button" class="close" data-modal-close>
+          <svg width="14px" height="14px">
+            <use
+              href="./images/symbol-defs.svg#icon-close-black-18dp-2-1-1"
+            ></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <script src="./js/modal.js"></script>
   </body>
 </html>
