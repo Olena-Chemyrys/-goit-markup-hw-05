@@ -62,6 +62,11 @@ ul {
   color: var(--icon-items-color);
 }
 
+.header .link {
+  transition-property: color;
+  transition-duration: 500ms;
+  transition-timing-function: linear;
+}
 .button {
   cursor: pointer;
   border-radius: 4px;
@@ -78,7 +83,6 @@ ul {
 
 .header {
   border: 1px solid #ececec;
-  /* background-color: #ffffff; */
 }
 
 .header-nav {
@@ -217,6 +221,9 @@ ul {
   justify-content: center;
   margin: 0 auto;
   padding: 10px 24px;
+  transition-property: color;
+  transition-duration: 1000ms;
+  transition-timing-function: linear;
 }
 
 .hero .primary:hover,
@@ -285,6 +292,32 @@ ul {
   margin-right: 30px;
 }
 
+.work-tumb {
+  position: relative;
+  width: 370px;
+  height: 294px;
+  background-color: teal;
+}
+
+.work-tumb > .work-decorate {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: rgba(47, 48, 58, 0.8);
+  padding-top: 27px;
+  padding-bottom: 27px;
+}
+
+.thumb-title {
+  line-height: 1.12;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--primary-white-color);
+}
+
 /* team-section */
 .team {
   background-color: var(--buttons-background);
@@ -350,6 +383,9 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition-property: background-color, color;
+  transition-duration: 500ms;
+  transition-timing-function: linear;
 }
 .social-item .icon-social {
   fill: currentColor;
@@ -385,6 +421,9 @@ ul {
   border: 1px solid var(--icon-items-color);
   border-radius: 4px;
   color: var(--icon-items-color);
+  transition-property: color;
+  transition-duration: 1000ms;
+  transition-timing-function: linear;
 }
 
 .client-icon {
@@ -424,14 +463,20 @@ ul {
   letter-spacing: 0.03em;
   color: var(--title-text-color);
   background-color: var(--buttons-background);
+  transition-property: box-shadow;
+  transition-duration: 1000ms;
+  transition-timing-function: linear;
+  transition-delay: 50ms;
 }
 
 .sites-section .secondary:hover,
 .sites-section .secondary:focus {
   color: var(--primary-white-color);
   background-color: var(--accent-color);
-  box-shadow: 1px 1px 2px 2px hsla(0, 0%, 0%, 0.3);
+  box-shadow: 0px 1px 3px 3px hsla(0, 0%, 0%, 0.3);
 }
+
+/* Sites menu */
 
 .container .sites-items {
   display: flex;
@@ -442,6 +487,10 @@ ul {
 .sites-items > .site-item {
   width: calc((100% - 2 * 30px) / 3);
   border: 1px solid #eeeeee;
+  transition-property: box-shadow;
+  transition-duration: 1000ms;
+  transition-timing-function: 500ms;
+  transition-delay: 50ms;
 }
 
 .site-item > .sites-title {
