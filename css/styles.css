@@ -68,12 +68,6 @@ ul {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* :hover {
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-} */
-
 .button {
   cursor: pointer;
   border-radius: 4px;
@@ -134,6 +128,7 @@ ul {
 
 .header-links .link {
   color: #212121;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-thumb {
@@ -168,6 +163,7 @@ ul {
   align-self: center;
   align-items: center;
   color: var(--primary-text-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-links .link:hover,
@@ -230,9 +226,8 @@ ul {
   justify-content: center;
   margin: 0 auto;
   padding: 10px 24px;
-  transition-property: color;
-  transition-duration: 1000ms;
-  transition-timing-function: linear;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero .primary:hover,
@@ -391,10 +386,10 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .social-item .icon-social {
   fill: currentColor;
 }
@@ -429,9 +424,8 @@ ul {
   border: 1px solid var(--icon-items-color);
   border-radius: 4px;
   color: var(--icon-items-color);
-  /* transition-property: color;
-  transition-duration: 1000ms;
-  transition-timing-function: linear; */
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-icon {
@@ -471,10 +465,8 @@ ul {
   letter-spacing: 0.03em;
   color: var(--title-text-color);
   background-color: var(--buttons-background);
-  transition-property: box-shadow;
-  transition-duration: 1000ms;
-  transition-timing-function: linear;
-  transition-delay: 50ms;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .sites-section .secondary:hover,
@@ -495,10 +487,7 @@ ul {
 .sites-items > .site-item {
   width: calc((100% - 2 * 30px) / 3);
   border: 1px solid #eeeeee;
-  transition-property: box-shadow;
-  transition-duration: 1000ms;
-  transition-timing-function: 500ms;
-  transition-delay: 50ms;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-item > .sites-title {
@@ -530,9 +519,7 @@ ul {
   position: absolute;
   padding: 63px 24px;
   background-color: rgba(33, 150, 243, 0.9);
-  transform: translateY(100%);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hidden-sites-text {
@@ -596,10 +583,10 @@ ul {
 /* social-links */
 .sign-up {
   width: 206px;
-  /* height: 80px; */
   margin-left: 70px;
   padding: 0;
 }
+
 .social-title {
   font-size: 14px;
   line-height: 1.14;
@@ -625,9 +612,10 @@ ul {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.2);
+  transition: opacity 1000ms linear, visibility 1000 linear;
 }
 
-.backdrope.is-hidden {
+.is-hidden {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
@@ -637,14 +625,19 @@ ul {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
   background: var(--primary-white-color);
   width: 528px;
   min-height: 581px;
+  padding: 40px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  animation: changes-modal 250ms cubic-bezier(0.4, 0, 0.2, 1) none;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrope.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0);
 }
 
 .modal .close {
@@ -661,27 +654,27 @@ ul {
   align-items: center;
 }
 
-.primary:hover .modal,
+/* .primary:hover .modal,
 .primary:focus .modal {
-  animation: changesmodal, 1000ms, cubic-bezier(0.4, 0, 0.2, 1), none;
-}
+  animation: changesmodal, 5000ms, linear, none;
+} */
 
-@keyframes changesmodal {
+/* @keyframes changesmodal {
   0% {
-    transform: translateX(-50%, -50%);
-    transform: translateY(-50%, -50%);
+    transform: translateX(0, 0);
+    transform: translateY(0, 0);
     transform: scale(0.5);
   }
 
   50% {
-    transform: translateX(-25%, -25%);
-    transform: translateY(-25%, -25%);
+    transform: translateX(50%, 50%);
+    transform: translateY(50%, 50%);
     transform: scale(0.75);
   }
 
   100% {
-    transform: translateX(0, 0);
-    transform: translateY(0, 0);
+    transform: translateX(100%, 100%);
+    transform: translateY(100%, 100%);
     transform: scale(1);
   }
-}
+} */
