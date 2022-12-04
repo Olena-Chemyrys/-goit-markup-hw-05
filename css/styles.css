@@ -158,6 +158,14 @@ ul {
   color: var(--accent-color);
 }
 
+.header-item .current {
+  color: var(--accent-color);
+}
+
+.header-item .portfolio {
+  color: var(--accent-color);
+}
+
 .container > .contact-links {
   display: flex;
   align-content: center;
